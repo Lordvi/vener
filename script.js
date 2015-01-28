@@ -1127,22 +1127,3 @@ jQuery(function ($) {
     header.css('background-image', "url('images/header.png')".replace(/(url\(['"]?)/i, "$1" + path));
     header.css('background-position', "center top");
 });
-
-jQuery(function () {
-    'use strict';
-    artButtonSetup("button");
-    
-    var indexURL = jQuery('link[rel="header_link"]').attr('href');
-    var iframeTagPart = ['<iframe allowtransparency="true" ' , 'background-color:transparent;filter:progid:DXImageTransform.Microsoft.Alpha(style=0,opacity=0);"></iframe>'];
-    if(indexURL && jQuery('header.clickable').length) {
-        if(jQuery('#art-header-bg').length) {
-            jQuery('header').append(
-                (jQuery.browser.msie ? iframeTagPart[0] + 'style="position:absolute;height:100%;width:40000px;left:-20000px;' + iframeTagPart[1] : '' ) +
-                '<a style="position:absolute;height:100%;width:40000px;left:-20000px;top:0px;z-index:1000;" href="' + indexURL + '"></a>');
-        } else {
-            jQuery('header').append(
-                (jQuery.browser.msie ? iframeTagPart[0] + 'style="position:absolute;height:100%;width:100%;' + iframeTagPart[1] : '' ) +
-                '<a style="position:absolute;height:100%;width:100%;" href="' + indexURL + '"></a>');
-        }
-    }
-});
