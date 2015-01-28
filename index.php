@@ -2,7 +2,7 @@
 			<?php get_sidebar('top'); ?>
 			<?php
 			if (have_posts()) {
-				/* Display navigation to next/previous pages when applicable */
+				/* Display navigation to next/previous pages when applicable  yeees*/
 				if (theme_get_option('theme_' . (theme_is_home() ? 'home_' : '') . 'top_posts_navigation')) {
 					theme_page_navigation();
 				}
