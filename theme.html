@@ -53,11 +53,7 @@
 
 </style></head>
 <body>
-{% if is_login %}
 
-      {{ login_form }}
-
-    {% else  %}
 <div id="art-main">
 <header class="art-header clearfix">
 
@@ -73,6 +69,12 @@
 
 </header>
 
+
+<div class="art-sheet clearfix">
+            <div class="art-layout-wrapper clearfix">
+                <div class="art-content-layout">
+                    <div class="art-content-layout-row">
+                        <div class="art-layout-cell art-content clearfix"><article class="art-post art-article">
 {% if is_home or is_tag %}
       <div class="span6 offset1 posts">
           {% if is_tag %}
@@ -133,12 +135,6 @@
               {{ post.content }}
 
             </div>
-
-<div class="art-sheet clearfix">
-            <div class="art-layout-wrapper clearfix">
-                <div class="art-content-layout">
-                    <div class="art-content-layout-row">
-                        <div class="art-layout-cell art-content clearfix"><article class="art-post art-article">
                                 
                                                 
                 <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout-wrapper layout-item-0">
