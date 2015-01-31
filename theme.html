@@ -171,25 +171,7 @@
 </script>
             </div>
 
-            {% if post.type == 'link' %}
-            <p><a href="{{ post.url }}"><i class="icon-share"></i> {{ post.url }}</a></p>
-            {% endif %}
-
-            {{ theme.social.bar }}
-
-            {% if post.tags %}
-            <ul class="post-tags">
-            {% for tag in post.tags %}
-              <li><a href="/tag/{{ tag }}">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
-            {% endfor %}
-            </ul>
-            {% endif %}
-
-
-
-
-
-
+      
 
 
 <div class="art-sheet clearfix">
