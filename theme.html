@@ -77,29 +77,6 @@
                         <div class="art-layout-cell art-content clearfix"><article class="art-post art-article">
 
 
-          {% if posts %}
-          {% for post in posts %}
-          <div class="post span6">
-            <div class="row">
-              <div class="span6">
-                <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
-                
-              </div>
-            </div>
-            <div class="post-body" data-type-cleanup="true">
-             
-              {{ post.content }}
-              
-            </div>
-            <div class="post-info">
-              <div class="info-left">
-                <p class="date">{{ post.created_at }}</p>
-              </div>
-              <div class="info-right">
-                <p class="read-more"><a href="{{ post.permalink }}">Читать &raquo;</a></p>
-              </div>
-            </div>
-          </div>
                                                 
                 <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout-wrapper layout-item-0">
 <div class="art-content-layout">
