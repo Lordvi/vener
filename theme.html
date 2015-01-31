@@ -53,6 +53,11 @@
 
 </style></head>
 <body>
+{% if is_login %}
+
+      {{ login_form }}
+
+    {% else  %}
 <div id="art-main">
 <header class="art-header clearfix">
 
@@ -69,6 +74,124 @@
 
                     
 </header>
+
+{% if is_home or is_tag %}
+      <div class="span6 offset1 posts">
+          {% if is_tag %}
+          <h4 class="sub-heading span6">Все статьи с меткой {{ tag }}:</h4>
+          {% endif %}
+
+          {% if posts %}
+          {% for post in posts %}
+          <div class="post span6">
+            <div class="row">
+              <div class="span6">
+                <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+                
+              </div>
+            </div>
+            <div class="post-body" data-type-cleanup="true">
+             
+              {{ post.content }}
+              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- burshapgor -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7494488769984810"
+     data-ad-slot="1099854849"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+            <div class="post-info">
+              <div class="info-left">
+                <p class="date">{{ post.created_at }}</p>
+              </div>
+              <div class="info-right">
+                <p class="read-more"><a href="{{ post.permalink }}">Читать &raquo;</a></p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% if not is_tag %}
+          <div class="pagination span6">
+            {% if pagination.prev %}<a href="{{ pagination.prev }}" class="post-prev">&larr; На предыдущую страницу</a>{% endif %}
+            {% if pagination.next %}<a href="{{ pagination.next }}" class="post-next">На следующую страницу &rarr;</a>{% endif %}
+          </div>
+          {% endif %}
+          {% else %}
+          <h4 class="sub-heading span6"> Может быть вы искали </h4>
+          {% endif %}
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- expl-remont -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:600px"
+     data-ad-client="ca-pub-7494488769984810"
+     data-ad-slot="9643710840"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+      </div>
+
+      {% elif post %}
+
+      <div class="span6 offset1 posts">
+        <div class="post whole span6">
+          <h1>{{ post.title }}</h1>
+          <div class="post-info">
+            <div class="info-left">
+              <p class="date">{{ post.created_at }}</p>
+            </div>
+            <div class="info-right">
+              <p class="comments">
+                <a href="/"><i class="icon-comment"></i> 1495</a>
+              </p>
+            </div>
+          </div>
+          <div class="post-body">
+            <div class="post-content" data-type-cleanup="true">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- burshapgor -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7494488769984810"
+     data-ad-slot="1099854849"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+              {{ post.content }}
+
+<!-- burshapgor -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-7494488769984810"
+     data-ad-slot="1099854849"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </div>
+
+            {% if post.type == 'link' %}
+            <p><a href="{{ post.url }}"><i class="icon-share"></i> {{ post.url }}</a></p>
+            {% endif %}
+
+            {{ theme.social.bar }}
+
+            {% if post.tags %}
+            <ul class="post-tags">
+            {% for tag in post.tags %}
+              <li><a href="/tag/{{ tag }}">{{ tag|format_tag(link=False, humanize=True) }}</a></li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+
+
+
+
+
+
+
+
 <div class="art-sheet clearfix">
             <div class="art-layout-wrapper clearfix">
                 <div class="art-content-layout">
