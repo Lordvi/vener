@@ -75,11 +75,7 @@
                 <div class="art-content-layout">
                     <div class="art-content-layout-row">
                         <div class="art-layout-cell art-content clearfix"><article class="art-post art-article">
-{% if is_home or is_tag %}
-      <div class="span6 offset1 posts">
-          {% if is_tag %}
-          <h4 class="sub-heading span6">Все статьи с меткой {{ tag }}:</h4>
-          {% endif %}
+
 
           {% if posts %}
           {% for post in posts %}
@@ -104,38 +100,6 @@
               </div>
             </div>
           </div>
-          {% endfor %}
-          
-      {% elif post %}
-
-      <div class="span6 offset1 posts">
-        <div class="post whole span6">
-          <h1>{{ post.title }}</h1>
-          <div class="post-info">
-            <div class="info-left">
-              <p class="date">{{ post.created_at }}</p>
-            </div>
-            <div class="info-right">
-              <p class="comments">
-                <a href="/"><i class="icon-comment"></i> 1495</a>
-              </p>
-            </div>
-          </div>
-          <div class="post-body">
-            <div class="post-content" data-type-cleanup="true">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- burshapgor -->
-<ins class="adsbygoogle"
-     style="display:inline-block;width:728px;height:90px"
-     data-ad-client="ca-pub-7494488769984810"
-     data-ad-slot="1099854849"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-              {{ post.content }}
-
-            </div>
-                                
                                                 
                 <div class="art-postcontent art-postcontent-0 clearfix"><div class="art-content-layout-wrapper layout-item-0">
 <div class="art-content-layout">
