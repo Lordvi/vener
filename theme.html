@@ -98,6 +98,7 @@
 </div><div class="art-content-layout layout-item-5">
     <div class="art-content-layout-row">
     <div class="art-layout-cell layout-item-7" style="width: 25%" >
+       
         {% if posts_recent %}
                 <ul>
                 {% for post in posts_recent %}
@@ -114,16 +115,18 @@
     
     
     
-    {% if posts %}
-     {% for post in posts %}
-          <div class="post"
-               <h2><a href="{{ post.permalink }}"{{ post.title }}</a></h2>
-               <p class="muted"Posted on {{ post.created_at }}</p>
-               {{ post.content }}
-          </div>
-     {% endfor %}
+   {% if posts %}
+  {% for post in posts %}
+    <div class="post">
+      <h2><a href="{{ post.permalink }}">{{ post.title }}</a></h2>
+      <p>Posted on {{ post.created_at|format_date }}</p>
+      {% if post.content|striptags|wordcount > 0 %}
+        <p>{{ post.content|striptags|truncate(200) }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
 {% else %}
-     <p>Oh noes! There are no posts here :(</p>
+  <p>Oh noes! There are no posts here :(</p>
 {% endif %}
         <h1>Optimizing The Way You Study</h1><p><span style="font-style:italic;">Sed amet ut phasellus aenean nec sagittis est tortor.  Eget in enim nonummy ut nunc a fermentum turpis nonummy  nam tellus non.</span></p><p><img width="570" height="176" alt="" src="{{ assets('images/e1.jpg')}}" class=""></p><p>Vivamus fringilla ac nisl ante scelerisque.  Sapien rhoncus cras mi ante. Id leo ridiculus  lectus nisl  in. Tristique augue non eleifend eget  egestas.  Dolor egestas faucibus ac eros quis. Phasellus tortor dolor. Massa nec praesent ipsum sollicitudin mauris praesent dapibus leo in cras. </p><p><a href="#" class="art-button">Далее...</a></p><h1>Individual Approach To All</h1><p>Lobortis imperdiet ante aliquam elementum vel. Rutrum elit tristique donec phasellus. Mauris molestie justo vestibulum sed ipsum dui nec fringilla.  Tincidunt auctor eget aliquam donec fermentum.  Et faucibus tortor nibh velit arcu bibendum.  Est pellentesque tincidunt euismod.  Magna faucibus elit cursus arcu orci id eget hendrerit egestas rutrum. Odio magna accumsan mi. Sem tortor tellus quis iaculis ridiculus neque sed molestie tincidunt arcu.</p><p><a href="#" class="art-button">Далее...</a></p>
     </div>
