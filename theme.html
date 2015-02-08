@@ -52,7 +52,15 @@
             </div>
 
 <nav class="art-nav clearfix">
-    <ul class="art-hmenu"><li><a href="/" class="active">Home</a></li><li><a href="/связаться-с-нами.html">Связаться с Нами</a></li><li><a href="страница-блога.html">Страница блога</a></li></ul> 
+    <ul class="art-hmenu"><li><a href="/" class="active">Home</a></li>
+     {% if pages %}
+          {% for page in pages %}
+          <li><a href="{{ page.permalink }}" class="{{ set_active(page.permalink) }}">{{ page.title }}</a></li>
+          {% endfor %}
+          {% endif %}
+    
+    
+    <li><a href="/связаться-с-нами.html">Связаться с Нами</a></li><li><a href="страница-блога.html">Страница блога</a></li></ul> 
     </nav>
 
 </header>
